@@ -1,2 +1,2 @@
-# [🌟CVPR2024 Highlight🌟] ExACT: Language-guided Conceptual Reasoning and Uncertainty Estimation for Event-based Action Recognition and More
-Link: https://vlislab22.github.io/ExACT/
+# LaSe-E2V: Towards Language-guided Semantic-Aware Event-to-Video Reconstruction
+Link: https://vlislab22.github.io/LaSe-E2V/
