@@ -26,6 +26,16 @@
             margin-right: auto;
         }
     </style>
+    <style>
+        .video-container {
+            display: flex; /* 使用Flexbox来横向排列视频 */
+            justify-content: space-around; /* 控制视频之间的间隔 */
+            flex-wrap: wrap; /* 如果屏幕宽度不够，视频自动换行 */
+        }
+        .video-item {
+            margin: 10px; /* 每个视频的外边距 */
+        }
+    </style>
   </head>
 
   <body style=“text-align: center;”>
@@ -183,6 +193,30 @@ While the previous approaches suffer from low contrast, blur, and extensive arti
 	</p>
     </div>          
       </div>
+
+<div class="video-container">
+        <div class="video-item">
+            <video width="320" height="240" controls>
+                <source src="video1.mp4" type="video/mp4">
+                <source src="video1.ogv" type="video/ogg">
+                您的浏览器不支持视频标签。
+            </video>
+        </div>
+        <div class="video-item">
+            <video width="320" height="240" controls>
+                <source src="video2.mp4" type="video/mp4">
+                <source src="video2.ogv" type="video/ogg">
+                您的浏览器不支持视频标签。
+            </video>
+        </div>
+        <div class="video-item">
+            <video width="320" height="240" controls>
+                <source src="video3.mp4" type="video/mp4">
+                <source src="video3.ogv" type="video/ogg">
+                您的浏览器不支持视频标签。
+            </video>
+        </div>
+    </div>
 	    
         <!-- ##### Results #####-->
 
