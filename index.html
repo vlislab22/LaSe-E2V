@@ -28,12 +28,12 @@
     </style>
     <style>
         .video-container {
-            display: flex; /* 使用Flexbox来横向排列视频 */
-            justify-content: space-around; /* 控制视频之间的间隔 */
-            flex-wrap: wrap; /* 如果屏幕宽度不够，视频自动换行 */
+            display: grid; /* 使用Grid布局 */
+            grid-template-columns: repeat(4, 1fr); /* 每行4个视频 */
+            gap: 10px; /* 控制网格项之间的间距 */
         }
         .video-item {
-            margin: 10px; /* 每个视频的外边距 */
+            width: 100%; /* 让视频宽度适应网格项 */
         }
     </style>
   </head>
