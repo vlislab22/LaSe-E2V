@@ -27,13 +27,29 @@
         }
     </style>
     <style>
+        /* 设置body为flex容器，用于居中布局 */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+        }
         .video-container {
-            display: grid; /* 使用Grid布局 */
-            grid-template-columns: repeat(2, 1fr); /* 每行4个视频 */
-            gap: 1px; /* 控制网格项之间的间距 */
+            display: flex;
+            flex-wrap: wrap; /* 允许换行 */
+            justify-content: center; /* 水平方向居中 */
+            align-items: center; /* 垂直方向居中 */
+            width: fit-content; /* 根据内容自动调整宽度 */
         }
         .video-item {
-            width: 100%; /* 让视频宽度适应网格项 */
+            width: 320px; /* 每个视频的宽度 */
+            height: 240px; /* 每个视频的高度 */
+            box-sizing: border-box; /* 包括内边距和边框在宽度和高度中 */
+        }
+        .video-container .video-item {
+            margin: 0; /* 取消内边距以免视频之间有空隙 */
         }
     </style>
   </head>
