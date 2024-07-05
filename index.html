@@ -27,7 +27,7 @@
         }
     </style>
     <style>
-        /* 设置body为flex容器，用于居中布局 */
+        /* 设置body和container为flex容器，用于居中布局 */
         body {
             display: flex;
             justify-content: center;
@@ -35,11 +35,18 @@
             height: 100vh;
             margin: 0;
         }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
         .video-container {
             display: flex;
             flex-wrap: wrap; /* 允许换行 */
             justify-content: center; /* 水平方向居中 */
-            width: 680px; /* 2个视频的宽度 + 内边距 */
+            align-items: center; /* 垂直方向居中 */
+            width: 680px; /* 2个视频的宽度 */
         }
         .video-item {
             width: 320px; /* 每个视频的宽度 */
