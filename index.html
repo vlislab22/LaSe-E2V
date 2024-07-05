@@ -53,8 +53,8 @@
                     </li>
 			
                 <li>
-                    <img src="./images/huiyi1.png" height="80px"><br>
-                    <a href="" >
+                    <img src="./images/hangyu.png" height="80px"><br>
+                    <a href="https://github.com/cyjdlhy" >
                                 Hangyu Li
                                 </a>
                                 <br /> AI Thrust, HKUST(GZ)
@@ -139,14 +139,17 @@
                     Abstract
                 </h3>
                 <p class="text-justify">
-	Event cameras have recently been shown beneficial for practical vision tasks, such as action recognition, thanks to their high temporal resolution, power efficiency, and reduced privacy concerns. 
-        However, current research is hindered by 1) the difficulty in processing events because of their prolonged duration and dynamic actions with complex and ambiguous semantics and 2) the redundant action depiction of the event frame representation with fixed stacks.  
-    	We find language naturally conveys abundant semantic information, rendering it stunningly superior in reducing semantic uncertainty.  In light of this, we propose ExACT, a novel approach that, for the first time, 
-   	tackles event-based action recognition from a cross-modal conceptualizing perspective. Our ExACT brings two technical contributions. 
-	Firstly, we propose an adaptive fine-grained event (AFE) representation to adaptively filter out the repeated events for the stationary objects while preserving dynamic ones. 
-	This subtly enhances the performance of ExACT without extra computational cost. Then, we propose a conceptual reasoning-based uncertainty estimation module, which simulates the recognition process to enrich the semantic representation. 
-	In particular, conceptual reasoning builds the temporal relation based on the action semantics, and uncertainty estimation tackles the semantic uncertainty of actions based on the distributional representation. 
-    	Experiments show that our ExACT achieves superior recognition accuracy of 94.83%(+2.23%), 90.10%(+37.47%) and 67.24% on PAF, HARDVS and our SeAct datasets respectively.
+Event cameras harness advantages such as low latency, high temporal resolution, and high dynamic range (HDR), compared to standard cameras. 
+Due to the distinct imaging paradigm shift, a dominant line of research focuses on event-to-video (E2V) reconstruction to bridge event-based and standard computer vision. 
+However, this task remains challenging due to its inherently ill-posed nature: event cameras only detect the edge and motion information locally. 
+Consequently, the reconstructed videos are often plagued by artifacts and regional blur, primarily caused by the ambiguous semantics of event data. 
+In this paper, we find language naturally conveys abundant semantic information, rendering it stunningly superior in ensuring semantic consistency for E2V reconstruction. 
+Accordingly, we propose a novel framework, called LaSe-E2V, that can achieve semantic-aware high-quality E2V reconstruction from a language-guided perspective, buttressed by the text-conditional diffusion models.
+However, due to diffusion models' inherent diversity and randomness, it is hardly possible to directly apply them to achieve spatial and temporal consistency for E2V reconstruction.
+Thus, we first propose an Event-guided Spatiotemporal Attention (ESA) module to condition the event data to the denoising pipeline effectively. 
+We then introduce an event-aware mask loss to ensure temporal coherence and a noise initialization strategy to enhance spatial consistency.
+Given the absence of event-text-video paired data, we aggregate existing E2V datasets and generate textual descriptions using the tagging models for training and evaluation. 
+Extensive experiments on three datasets covering diverse challenging scenarios, e.g, fast motion, low light demonstrate the superiority of our method.
                 </p>
             </div>
         </div>
@@ -169,15 +172,13 @@
      <div class="row">     
         <div class="col-md-8 col-md-offset-2">
             <h3>
-                The overall framework of our ExACT
+                Comparison of the E2V pipeline between the previous method and our LaSe-E2V
             </h3>
 		<p class="text-justify">
-		Our ExACT consists of four components: 
-		Firstly, the AFE representation recursively eliminates repeated events and generates event frames depicting dynamic actions;
-		Then, the event encoder and the text encoder are responsible for the event and text embedding, respectively; 
-		Lastly, the CRUE module simulates the action recognition process to establish the complex semantic relations for sub-actions and reduce the semantic uncertainty.
+		Comparison of the E2V pipeline between HyperE2VID [11] and our LaSe-E2V: The baseline method solely relies on event data, leading to ambiguity in local structures. 
+		In contrast, our approach integrates language descriptions to enrich the semantic information and ensure the video remains coherent with the event stream.
 		</p>
-            	<img src="./images/Framework.png" class="img-responsive" alt="vis_res" class="center-image" >
+            	<img src="./images/e2v_overview.png" class="img-responsive" alt="vis_res" class="center-image" >
       	</div>
     </div>
 
