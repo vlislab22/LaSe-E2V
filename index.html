@@ -26,33 +26,40 @@
             margin-right: auto;
         }
 
-        /* 设置body和container为flex容器，用于居中布局 */
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
-            text-align: center; /* 添加这个属性以确保文本中心对齐 */
+            text-align: center;
         }
+
         .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
+            margin: 20px auto;
+            padding: 15px;
+            max-width: 1200px;
         }
+
         .video-container {
             display: flex;
-            flex-wrap: wrap; /* 允许换行 */
-            justify-content: center; /* 水平方向居中 */
-            align-items: center; /* 垂直方向居中 */
-            width: 680px; /* 2个视频的宽度 */
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
         }
+
         .video-item {
-            width: 320px; /* 每个视频的宽度 */
-            height: 240px; /* 每个视频的高度 */
-            box-sizing: border-box; /* 包括内边距和边框在宽度和高度中 */
-            margin: 0; /* 取消内边距以免视频之间有空隙 */
+            flex: 1 1 calc(33.333% - 10px);
+            box-sizing: border-box;
+            margin: 5px;
+        }
+
+        @media (max-width: 992px) {
+            .video-item {
+                flex: 1 1 calc(50% - 10px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .video-item {
+                flex: 1 1 100%;
+            }
         }
     </style>
   </head>
@@ -213,42 +220,42 @@ While the previous approaches suffer from low contrast, blur, and extensive arti
 
     <div class="video-container">
         <div class="video-item">
-            <video width="320" height="240" controls>
+            <video width="100%" height="auto" controls>
                 <source src="./video/comparison_bike_bay_hdr.mp4" type="video/mp4">
             </video>
         </div>
         <div class="video-item">
-            <video width="320" height="240" controls>
+            <video width="100%" height="auto" controls>
                 <source src="./video/comparison_indoor_flying2.mp4" type="video/mp4">
             </video>
         </div>
         <div class="video-item">
-            <video width="320" height="240" controls>
+            <video width="100%" height="auto" controls>
                 <source src="./video/comparison_outdoor_day2.mp4" type="video/mp4">
             </video>
         </div>
         <div class="video-item">
-            <video width="320" height="240" controls>
+            <video width="100%" height="auto" controls>
                 <source src="./video/comparison_poster_6dof.mp4" type="video/mp4">
             </video>
         </div>
         <div class="video-item">
-            <video width="320" height="240" controls>
+            <video width="100%" height="auto" controls>
                 <source src="./video/comparison_poster_pillar.mp4" type="video/mp4">
             </video>
         </div>
         <div class="video-item">
-            <video width="320" height="240" controls>
+            <video width="100%" height="auto" controls>
                 <source src="./video/comparison_slow_and_fast_desk.mp4" type="video/mp4">
             </video>
         </div>
         <div class="video-item">
-            <video width="320" height="240" controls>
+            <video width="100%" height="auto" controls>
                 <source src="./video/fast_1.mp4" type="video/mp4">
             </video>
         </div>
         <div class="video-item">
-            <video width="320" height="240" controls>
+            <video width="100%" height="auto" controls>
                 <source src="./video/fast_2.mp4" type="video/mp4">
             </video>
         </div>
