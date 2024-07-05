@@ -29,12 +29,26 @@
         body {
             margin: 0;
             text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 16px; /* 设置全局字体大小 */
+            line-height: 1.5; /* 设置全局行距 */
+            padding: 0; /* 去除默认的内边距 */
         }
 
         .container {
             margin: 20px auto;
-            padding: 15px;
-            max-width: 1200px;
+            padding: 30px;
+            max-width: 2000px;
+        }
+        .row {
+            margin-bottom: 20px; /* 设置底部的间距 */
+        }
+        pre {
+            text-align: left; /* 确保<pre>内的内容左对齐 */
+            padding: 10px; /* 添加适当的内边距 */
+            border: 1px solid #ccc; /* 添加边框 */
+            background-color: #f9f9f9; /* 添加背景色以区分代码块 */
+            overflow-x: auto; /* 如果内容超出宽度，则水平滚动 */
         }
 
         .video-container {
@@ -69,7 +83,7 @@
     <div class="container" id="main">
         <div class="row">
             <h1 class="col-md-12 text-center">
-                LaSe-E2V: Towards Language-guided Semantic-Aware Event-to-Video Reconstruction<br /> 
+                LaSe-E2V: Towards Language-guided Semantic-Aware <br />Event-to-Video Reconstruction<br /> 
             </h1>
         </div>
         
@@ -78,7 +92,7 @@
                 <ul class="list-inline">
                     <li>
                         <img src="./images/khao.jpg" height="80px"><br>
-                        <a href="https://khao123.github.io/" >
+                        <a href="https://scholar.google.com/citations?user=IwvcylUAAAAJ&hl=zh-CN" >
                             Kanghao Chen
                         </a>
                         <br /> AI Thrust, HKUST(GZ)
@@ -128,34 +142,45 @@
                 <ul class="nav nav-pills nav-justified">
                     <li>
                         <a href="">
-                            <img src="./images/arxiv.png" height="100px"><br>
+                            <img src="./images/arxiv.png" height="60px"><br>
                             <h4><strong>Paper</strong></h4>
                         </a>
                     </li>
                     
                     <li> 
                         <a href="https://github.com/KHao123/LaSe-E2V">
-                            <img src="./images/github_icon.jpg" height="100px"><br>
-                            <h4><strong>Code</strong></h4>
+                            <img src="./images/github_icon.jpg" height="60px"><br>
+                            <h4><strong>Code (Coming Soon)</strong></h4>
                         </a>
                     </li>
                     
                     <li>
                         <a href="https://vlislab22.github.io/vlislab/">
-                            <img src="./images/lab_logo.png" height="100px"><br>
+                            <img src="./images/lab_logo.png" height="60px"><br>
                             <h4><strong>Vlislab</strong></h4>
                         </a>
                     </li>                       
                 </ul>
             </div>
         </div>
+        <hr>
+        <div class="row">     
+            <div class="col-md-8 col-md-offset-2">
+                <img src="./images/e2v_overview.png" class="img-responsive" alt="vis_res" class="center-image">
+                <p class="text-justify">
+                    The baseline method (HyperE2VID) solely relies on event data, leading to ambiguity in local structures. 
+                    In contrast, our approach integrates language descriptions to enrich the semantic information and ensure the video remains coherent with the event stream.
+                </p>
+                
+            </div>
+        </div>
 
         <!-- ##### Abstract #####-->
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                <h3>
+                <h1>
                     Abstract
-                </h3>
+                </h1>
                 <p class="text-justify">
 Event cameras harness advantages such as low latency, high temporal resolution, and high dynamic range (HDR), compared to standard cameras. 
 Due to the distinct imaging paradigm shift, a dominant line of research focuses on event-to-video (E2V) reconstruction to bridge event-based and standard computer vision. 
@@ -172,57 +197,29 @@ Extensive experiments on three datasets covering diverse challenging scenarios, 
             </div>
         </div>
 
-	<!-- ##### Results #####-->
- <!--
-	    <div class="row">
-     <div class="col-md-8 col-md-offset-2">
-          <h3>
-              Qualitative Results.
-          </h3>   
-    </div>   
-         <div class="col-md-8 col-md-offset-2">
-            <video width="750"  controls >
-                <source src="./video/general.mp4" type="video/mp4">
-              Your browser does not support HTML video.
-            </video>  
-	<p class="text-justify">
-While the previous approaches suffer from low contrast, blur, and extensive artifacts, LaSe-E2V obtains clear edges with high contrast and preserves the semantic details of the objects.
-	</p>
-    </div>          
-      </div>
+        <div class="row">     
+            <div class="col-md-8 col-md-offset-2">
+                <h1>
+                   Overview Framework
+                </h1>
+                <img src="./images/framework.png" class="img-responsive" alt="vis_res" class="center-image">
 
-<div class="row">
-     <div class="col-md-8 col-md-offset-2">
-          <h3>
-              Qualitative results of fast-motion condition from HS-ERGB dataset.
-          </h3>   
-    </div>   
-         <div class="col-md-8 col-md-offset-2">
-            <video width="750"  controls >
-                <source src="./video/fast-motion.mp4" type="video/mp4">
-              Your browser does not support HTML video.
-            </video>   
-    </div>          
-      </div>
+            </div>
+        </div>
 
-<div class="row">
-     <div class="col-md-8 col-md-offset-2">
-          <h3>
-              Qualitative results in low light condition from MVSEC dataset.
-          </h3>   
-    </div>   
-         <div class="col-md-8 col-md-offset-2">
-            <video width="750"  controls >
-                <source src="./video/low-light.mp4" type="video/mp4">
-              Your browser does not support HTML video.
-            </video>   
-	<p class="text-justify">
-	LaSe-E2V performs better to preserve the HDR characteristic of event cameras with higher contrast.
-	</p>
-    </div>          
-      </div> -->
-
+    <div class="row">
+        <h1>
+            Video
+        </h1>
+        <div class="col-md-8 col-md-offset-2">
+            <h2>
+                Qualitative comparison results on three datasets.
+            </h2>   
+            
+      </div>   
+    </div>
     <div class="video-container">
+        
         <div class="video-item">
             <video width="100%" height="auto" controls>
                 <source src="./video/comparison_bike_bay_hdr.mp4" type="video/mp4">
@@ -253,6 +250,17 @@ While the previous approaches suffer from low contrast, blur, and extensive arti
                 <source src="./video/comparison_slow_and_fast_desk.mp4" type="video/mp4">
             </video>
         </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <h2>
+                Qualitative results on datasets with fast motion.
+            </h2>   
+            
+      </div>   
+    </div>
+    <div class="video-container">
+        
         <div class="video-item">
             <video width="100%" height="auto" controls>
                 <source src="./video/fast_1.mp4" type="video/mp4">
@@ -267,47 +275,39 @@ While the previous approaches suffer from low contrast, blur, and extensive arti
 	    
     <!-- ##### Results #####-->
 
-     <div class="row">     
-        <div class="col-md-8 col-md-offset-2">
-            <h3>
-               Comparison with the Previous Baseline
-            </h3>
-		    <p class="text-justify">
-		        The baseline method (HyperE2VID) solely relies on event data, leading to ambiguity in local structures. 
-		        In contrast, our approach integrates language descriptions to enrich the semantic information and ensure the video remains coherent with the event stream.
-		    </p>
-            <img src="./images/e2v_overview.png" class="img-responsive" alt="vis_res" class="center-image">
-        </div>
-    </div>
+     
 	    
-    <div class="row">     
-        <div class="col-md-8 col-md-offset-2">
-            <h3>
-               Overview Framework.
-            </h3>
-            <img src="./images/framework.png" class="img-responsive" alt="vis_res" class="center-image">
-        </div>
-    </div>
+    
 	  
    <!-- ##### BibTex ##### -->
-   <!--
+   
    <hr>
-   <div class="row">
+   <!-- <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <h3>BibTeX</h3>
             <div class="row align-items-center">
                 <div class="col py-3">
                     <pre class="border">
-@article{ExACT,
-  title={ExACT: Language-guided Conceptual Reasoning and Uncertainty Estimation for Event-based Action Recognition and More},
-  author={Zhou,Jiazhou, Zheng,Xu, Lyu,Yuanhuiyi and Wang,Lin},
-  journal={The IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-  year={2024}}
+                @article{LaSe-E2V,
+                title={LaSe-E2V: Towards Language-guided Semantic-Aware Event-to-Video Reconstruction},
+                author={Kanghao Chen, Hangyu Li, Jiazhou Zhou, Zeyu Wang, Addison Lin Wang},
+                journal={arXiv},
+                year={2024}}
                     </pre>
                 </div>
             </div>
         </div>
-    </div>
-    -->
+    </div> -->
+
+    <div class="container is-max-desktop content">
+        <h2 class="title">BibTeX</h2>
+        <pre><code>@article{LaSe-E2V,
+    title={LaSe-E2V: Towards Language-guided Semantic-Aware Event-to-Video Reconstruction},
+    author={Kanghao Chen, Hangyu Li, Jiazhou Zhou, Zeyu Wang, Addison Lin Wang},
+    journal={arXiv},
+    year={2024}
+}</code></pre>
+      </div>
+   
 </body>
 </html>
